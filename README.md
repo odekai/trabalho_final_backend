@@ -1,27 +1,78 @@
 # trabalho_final_backend
 Trabalho final de programação Back-end no valor de 60 pts
 
-Trabalho final de programação Back-end
-Os supermercados Primeira Luz do Dia e Beagás pediram para vocês desenvolverem um sistema de
-vendas para eles. O sistema precisa conter os seguintes requisitos:
-• Controle de estoque – o sistema deve manter o controle de todo o estoque e deve ter m
-alarme para estoque abaixo do mínimo, que deve ser definido pelo administrador.
-• Produtos – todo estoque é composto de produtos. Os produtos não devem ser inseridos
-manualmente, quando uma entrega chegar, o programa entende a entrega (a entrega é feita
-manualmente pois não temos como fazer uma nota fiscal automá�ca) e altera os estoques
-dos produtos, se o produto já es�ver cadastrado, ou cadastra um produto novo
-automa�camente.
-• Controle de entregas – cada entrega contém os produtos pedidos, bem como o valor, data da
-entrega e número de nota fiscal.
-• Controle de clientes – os clientes podem optar por par�cipar do programa de fidelidade,
-com o cadastro dos clientes, as vendas podem ter descontos. Cada 10 reais em compra o
-cliente ganha um ponto que pode ser trocado por descontos (essa parte de troca não precisa
-ser implementada)
-• Cadastro de funcionários – o sistema deve manter um cadastro dos funcionários e, para
-realizar uma venda, o funcionário caixa deve estar logado.
-o Os �pos de funcionário podem ser:
- Administrador
- Funcionário
-• Controle de vendas – Os clientes precisam pagar os produtos que compraram, portanto é
-preciso manter um cadastro de todas as vendas realizadas. As vendas só podem ser feitas
-por um funcionário do �po Funcionário.
+
+
+
+---
+
+## 🏷️ Badges do Projeto
+
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Django](https://img.shields.io/badge/Django-Framework-green?logo=django)
+![SQLite](https://img.shields.io/badge/SQLite-Database-lightgrey?logo=sqlite)
+![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
+![License](https://img.shields.io/badge/Licença-MIT-green)
+
+---
+
+# 🛒 Sistema de Vendas – Supermercados Primeira Luz do Dia & Beagás
+
+Projeto desenvolvido como trabalho final da disciplina de Programação Back-end.
+O objetivo é criar um sistema funcional para auxiliar na gestão dos supermercados, cobrindo desde o estoque até o processo de vendas.
+
+---
+
+## ✨ Funcionalidades do Sistema
+
+### 📦 **Controle de Estoque**
+
+* Monitora automaticamente a quantidade de produtos.
+* Emite alerta quando algum item atingir o estoque mínimo.
+* Estoque mínimo definido pelo administrador.
+
+### 🛍️ **Gestão de Produtos**
+
+* Produtos não são cadastrados manualmente.
+* Ao registrar uma entrega, o sistema atualiza o estoque automaticamente.
+* Se o produto já existir, apenas incrementa a quantidade; caso contrário, cria o produto na hora.
+
+### 🚚 **Controle de Entregas**
+
+* Cada entrega registra:
+
+  * Lista de produtos recebidos
+  * Valor total
+  * Data da entrega
+  * Número da nota fiscal
+
+### 👥 **Controle de Clientes**
+
+* Possibilidade de adesão ao programa de fidelidade.
+* A cada R$10,00 em compras = +1 ponto para descontos futuros (não é necessário implementar a troca de pontos).
+
+### 🧑‍💼 **Cadastro de Funcionários**
+
+* Funcionários precisam estar cadastrados para operar o sistema.
+* Tipos disponíveis:
+
+  * **Administrador**
+  * **Funcionário**
+* Apenas funcionários do tipo *Funcionário* podem efetuar vendas.
+* Para vender, o funcionário deve estar logado.
+
+### 💰 **Controle de Vendas**
+
+* Registra todas as vendas realizadas no sistema.
+* Associado ao cliente (quando houver) e ao funcionário que efetuou a venda.
+
+---
+
+## 🧱 **Resumo da Arquitetura**
+
+O sistema integra o controle completo de estoque, clientes, funcionários e vendas, garantindo organização, segurança e automação no fluxo dos supermercados contratantes.
+
+---
+
+
+
