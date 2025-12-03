@@ -1,0 +1,33 @@
+{% extends "base/base.html" %}
+{% block title %}Funcionários{% endblock %}
+
+{% block content %}
+
+<h2 class="mb-3">Funcionários</h2>
+
+<a href="/funcionarios/novo/" class="btn btn-success mb-3">Novo Funcionário</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Usuário</th>
+            <th>Tipo</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for f in funcionarios %}
+        <tr>
+            <td>{{ f.username }}</td>
+            <td>{{ f.get_tipo_display }}</td>
+            <td>
+                <a href="/funcionarios/editar/{{ f.id }}/" class="btn btn-warning btn-sm">Editar</a>
+                <a href="/funcionarios/deletar/{{ f.id }}/" class="btn btn-danger btn-sm">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

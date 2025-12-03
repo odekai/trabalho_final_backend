@@ -1,0 +1,13 @@
+{% extends "base/base.html" %}
+{% block title %}Nova Venda{% endblock %}
+
+{% block content %}
+<h3>Cadastrar Venda</h3>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button class="btn btn-primary">Salvar</button>
+</form>
+{% endblock %}

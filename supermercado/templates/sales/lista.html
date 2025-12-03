@@ -1,0 +1,38 @@
+{% extends "base/base.html" %}
+{% block title %}Vendas{% endblock %}
+
+{% block content %}
+<h2>Vendas</h2>
+
+<a href="/vendas/novo/" class="btn btn-success mb-3">Nova Venda</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Funcionário</th>
+            <th>Total</th>
+            <th>Data</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for v in vendas %}
+        <tr>
+            <td>{{ v.id }}</td>
+            <td>{{ v.cliente }}</td>
+            <td>{{ v.funcionario }}</td>
+            <td>R$ {{ v.valor_total }}</td>
+            <td>{{ v.data }}</td>
+            <td>
+                <a href="/vendas/itens/{{ v.id }}/" class="btn btn-info btn-sm">Itens</a>
+                <a href="/vendas/deletar/{{ v.id }}/" class="btn btn-danger btn-sm">Excluir</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

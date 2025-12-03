@@ -1,0 +1,35 @@
+{% extends "base/base.html" %}
+{% block title %}Entregas{% endblock %}
+
+{% block content %}
+<h2>Entregas</h2>
+
+<a href="/entregas/novo/" class="btn btn-success mb-3">Nova Entrega</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Data</th>
+            <th>Nota Fiscal</th>
+            <th>Valor Total</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for e in entregas %}
+        <tr>
+            <td>{{ e.data }}</td>
+            <td>{{ e.nota_fiscal }}</td>
+            <td>R$ {{ e.valor_total }}</td>
+            <td>
+                <a href="/entregas/itens/{{ e.id }}/" class="btn btn-info btn-sm">Itens</a>
+                <a href="/entregas/editar/{{ e.id }}/" class="btn btn-warning btn-sm">Editar</a>
+                <a href="/entregas/deletar/{{ e.id }}/" class="btn btn-danger btn-sm">Excluir</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
